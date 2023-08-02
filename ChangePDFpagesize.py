@@ -21,11 +21,9 @@ def resize_pdf(input_file):
         height = page_obj.mediaBox.getHeight()
 
         if width > height:
-            # Landscape page will be resized as landscape
             A4_WIDTH = 842.0
             A4_HEIGHT = 595.0
         else:
-            # Portrait page will be resized as portrait
             A4_WIDTH = 595.0
             A4_HEIGHT = 842.0
 
@@ -34,7 +32,6 @@ def resize_pdf(input_file):
 
     with open(output_file, "wb") as fp:
         out_pdf.write(fp)
-
     return output_file
 
 def display_message(message):
@@ -56,27 +53,19 @@ def resize_and_save():
     else:
         display_message("Error: File not found.")
 
-# GUI
 root = tk.Tk()
 root.title("PDF Resizer")
 root.geometry("700x400")
-
 file_label = tk.Label(text="Select PDF File:")
 file_label.pack(pady=5)
-
 file_entry = tk.Entry(width=70)
 file_entry.pack(pady=5)
-
 browse_button = tk.Button(text="Browse", command=file_select)
 browse_button.pack(pady=5)
-
 resize_button = tk.Button(text="Resize PDF", command=resize_and_save)
 resize_button.pack(pady=10)
-
 result_label = tk.Label(text="")
 result_label.pack(pady=5)
-
 error_text = tk.Text(width=80, height=5, state=tk.DISABLED)
 error_text.pack(pady=5)
-
 root.mainloop()
