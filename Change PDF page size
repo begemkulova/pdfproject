@@ -21,11 +21,11 @@ def resize_pdf(input_file):
         height = page_obj.mediaBox.getHeight()
 
         if width > height:
-            # Landscape page, resize as landscape
+            # Landscape page will be resized as landscape
             A4_WIDTH = 842.0
             A4_HEIGHT = 595.0
         else:
-            # Portrait page, resize as portrait
+            # Portrait page will be resized as portrait
             A4_WIDTH = 595.0
             A4_HEIGHT = 842.0
 
