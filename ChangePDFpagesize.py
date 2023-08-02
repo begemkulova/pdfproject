@@ -47,7 +47,7 @@ def resize_and_save():
     if os.path.exists(input_file):
         try:
             output_file = resize_pdf(input_file)
-            display_message("Successfully resized the PDF. Saved to: " + output_file)
+            display_message("Success! Saved to: " + output_file)
         except Exception as e:
             display_message("Error: " + str(e))
     else:
